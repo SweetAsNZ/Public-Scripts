@@ -27,7 +27,7 @@
         [string]$Domain,
         [Parameter(Mandatory=$True)]
         [string]$ComputerName
-        )
+    )
 
     # Importing Modules
     if (! @(Get-Module -Name ActiveDirectory).count) 
