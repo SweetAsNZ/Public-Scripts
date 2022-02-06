@@ -1,0 +1,84 @@
+e.g  from 10.100.200.31:
+
+**************************
+Display the IP's this box has established connections to on which port ":xxx" :
+
+C:\Temp>netstat -ano | findstr /i "Est"
+  TCP    10.100.200.31:50686      10.200.2.99:10123      ESTABLISHED     5520
+  TCP    10.100.200.31:51016      10.200.2.91:445        ESTABLISHED     4
+  TCP    10.100.200.31:51017      10.200.2.92:445        ESTABLISHED     4
+  TCP    10.100.200.31:51435      10.200.2.16:49155      ESTABLISHED     1440
+  TCP    10.100.200.31:52304      10.200.2.161:445       ESTABLISHED     4
+
+
+**************************
+Display the IP's is this box trying to connect to where the conenction cannot or has not yet established a connection:
+
+C:\Temp>netstat -ano | findstr /i "Syn"
+  TCP    172.21.200.117:63733   77.67.10.157:80        SYN_SENT        56920
+
+
+**************************
+Display if the box is listening on port 80:
+
+C:\Temp>netstat -ano | findstr ":80"
+  TCP    0.0.0.0:80             0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:8081           0.0.0.0:0              LISTENING       1880
+  TCP    10.100.200.31:63722      10.200.2.29:80         TIME_WAIT       0
+  TCP    10.100.200.31:63763      10.200.2.29:80         TIME_WAIT       0
+  TCP    10.100.200.31:63780      10.200.2.29:80         ESTABLISHED     61016
+  TCP    172.21.200.117:60181   10.200.80.206:80       CLOSE_WAIT      16552
+
+
+**************************
+Displays Ethernet network statistics for this box:
+
+C:\Temp>netstat -e
+Interface Statistics
+
+                           Received            Sent
+
+Bytes                    1030462869       410304101
+Unicast packets          4193781442      1374540997
+Non-unicast packets       150505535         1436512
+Discards                        270             270
+Errors                            0               0
+Unknown protocols                 0
+
+
+
+**************************
+Diplay the network stats per protocol for this box:
+
+C:\Temp>netstat -s
+
+IPv4 Statistics
+
+  Packets Received                   = 1209767237
+  Received Header Errors             = 0
+  Received Address Errors            = 6317478
+  Datagrams Forwarded                = 0
+  Unknown Protocols Received         = 109
+  Received Packets Discarded         = 7895523
+  Received Packets Delivered         = 1195613661
+  Output Requests                    = 1799133593
+  Routing Discards                   = 0
+  Discarded Output Packets           = 9670
+  Output Packet No Route             = 514
+  Reassembly Required                = 0
+  Reassembly Successful              = 0
+  Reassembly Failures                = 0
+  Datagrams Successfully Fragmented  = 0
+  Datagrams Failing Fragmentation    = 0
+  Fragments Created                  = 0
+
+IPv6 Statistics
+
+  Packets Received                   = 0
+  Received Header Errors             = 0
+  Received Address Errors            = 0
+  Datagrams Forwarded                = 0
+  Unknown Protocols Received         = 0
+....
+
+**************************

@@ -1,0 +1,16 @@
+*** Renaming a File to YYYYMMDD_HHMM_SS ***
+REN mailboxes.csv "mailboxes_%date:~10,4%%date:~7,2%%date:~4,2%_%time:~0,2%%time:~3,2%_%time:~6,2%.log"
+
+*** OUtput to a file named YYYYMMDD_HHMM_SS ***
+ipconfig /all > "C:\ipconfig_%date:~10,4%%date:~7,2%%date:~4,2%_%time:~0,2%%time:~3,2%_%time:~6,2%.txt"
+
+
+*** Simple Command Date & Time ***
+
+ECHO.%TIME%
+ECHO.%DATE%
+
+
+*** ECHO Date and Time YYYYMMDD_HHMM_SS Including Seconds into a file C;\Log.txt ***
+SET LOG=C:\Log.txt
+ECHO %date:~10,4%%date:~7,2%%date:~4,2%_%time:~0,2%%time:~3,2%_%time:~6,2% >> %LOG%
