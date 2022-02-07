@@ -34,7 +34,7 @@ Just Run it
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true)]
-        [string]$IPs,
+        [array]$IPs,
         [Parameter(Mandatory=$true)]
         [string]$LastOctet
     )
