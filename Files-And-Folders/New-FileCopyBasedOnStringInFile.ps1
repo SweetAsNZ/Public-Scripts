@@ -44,7 +44,7 @@ New-FileCopyBasedOnStringInFile -Source C:\Temp -Dest C:\Temp\Folder2 -Filetype 
         [ValidateNotNullOrEmpty()] 
         [string]$Dest,
         [Parameter(Mandatory=$true, 
-        ValueFromPipelineByPropertyName=$true)] 
+        ValueFromPipelineByPropertyName=$true,HelpMessage="File Type e.g. TXT,CSV,INI,INF... Don't try with encrypted files if won't work. Coz they are encrypted...")] 
         [ValidateNotNullOrEmpty()] 
         [string]$FileType,
         [Parameter(Mandatory=$true, 
